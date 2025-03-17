@@ -1,0 +1,76 @@
+2025-03-17T12:14:48.932Z - ERROR - Failed to initialize database: Unknown database 'ecourts_db_jesbin'
+Error: Unknown database 'ecourts_db_jesbin'
+    at Object.createConnectionPromise [as createConnection] (/Users/jesbin/Desktop/nodejs_session/node_modules/mysql2/promise.js:19:31)
+    at Database.initialize (file:///Users/jesbin/Desktop/nodejs_session/src/database.js:36:43)
+    at ECourtsScraper.initializeDatabase (file:///Users/jesbin/Desktop/nodejs_session/src/ECourtsScraper.js:60:21)
+    at new ECourtsScraper (file:///Users/jesbin/Desktop/nodejs_session/src/ECourtsScraper.js:42:10)
+    at main (file:///Users/jesbin/Desktop/nodejs_session/src/main.js:46:19)
+    at file:///Users/jesbin/Desktop/nodejs_session/src/main.js:145:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-03-17T12:18:22.781Z - ERROR - Failed to initialize database: Unknown database 'ecourts_db_jesbin'
+Error: Unknown database 'ecourts_db_jesbin'
+    at Object.createConnectionPromise [as createConnection] (/Users/jesbin/Desktop/nodejs_session/node_modules/mysql2/promise.js:19:31)
+    at Database.initialize (file:///Users/jesbin/Desktop/nodejs_session/src/database.js:36:43)
+    at ECourtsScraper.initializeDatabase (file:///Users/jesbin/Desktop/nodejs_session/src/ECourtsScraper.js:60:21)
+    at new ECourtsScraper (file:///Users/jesbin/Desktop/nodejs_session/src/ECourtsScraper.js:42:10)
+    at main (file:///Users/jesbin/Desktop/nodejs_session/src/main.js:46:19)
+    at file:///Users/jesbin/Desktop/nodejs_session/src/main.js:145:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-03-17T12:30:02.564Z - ERROR - Missing required field: CNR number
+2025-03-17T12:30:06.699Z - ERROR - Missing required field: CNR number
+2025-03-17T12:30:11.127Z - ERROR - Missing required field: CNR number
+2025-03-17T12:30:11.127Z - ERROR - ✗ Error processing case KLKN010000012019: cnr is not defined
+2025-03-17T12:30:11.127Z - ERROR - Failed to fetch case details for KLKN010000012019 after 3 attempts
+2025-03-17T12:30:44.264Z - ERROR - Missing required field: CNR number
+2025-03-17T12:30:44.264Z - ERROR - ✗ Error processing case KLKN010000012019: cnr is not defined
+2025-03-17T12:30:44.264Z - ERROR - Failed to fetch case details for KLKN010000012019 after 1 attempts
+2025-03-17T12:30:53.964Z - ERROR - Failed to fetch case details for KLKN010000042019 after 1 attempts
+2025-03-17T12:30:53.964Z - ERROR - ✗ Error processing case KLKN010000042019: cnr is not defined
+2025-03-17T12:31:24.657Z - ERROR - Failed to fetch case details for KLKN010000102019 after 1 attempts
+2025-03-17T12:31:24.657Z - ERROR - ✗ Error processing case KLKN010000102019: cnr is not defined
+2025-03-17T12:31:34.991Z - ERROR - Failed to fetch case details for KLKN010000122019 after 1 attempts
+2025-03-17T12:31:34.991Z - ERROR - ✗ Error processing case KLKN010000122019: cnr is not defined
+2025-03-17T12:31:42.009Z - ERROR - Failed to fetch case details for KLKN010000142019 after 1 attempts
+2025-03-17T12:31:42.009Z - ERROR - ✗ Error processing case KLKN010000142019: cnr is not defined
+2025-03-17T12:32:05.038Z - ERROR - Missing required field: CNR number
+2025-03-17T12:32:05.039Z - ERROR - ✗ Error processing case KLKN010000202019: cnr is not defined
+2025-03-17T12:32:05.039Z - ERROR - Failed to fetch case details for KLKN010000202019 after 1 attempts
+2025-03-17T12:32:48.469Z - ERROR - Failed to fetch case details for KLKN010000312019 after 1 attempts
+2025-03-17T12:32:48.469Z - ERROR - ✗ Error processing case KLKN010000312019: cnr is not defined
+2025-03-17T12:32:54.394Z - ERROR - Missing required field: CNR number
+2025-03-17T12:32:54.394Z - ERROR - ✗ Error processing case KLKN010000322019: cnr is not defined
+2025-03-17T12:32:54.394Z - ERROR - Failed to fetch case details for KLKN010000322019 after 1 attempts
+2025-03-17T12:33:06.646Z - ERROR - Failed to fetch case details for KLKN010000352019 after 1 attempts
+2025-03-17T12:33:06.646Z - ERROR - ✗ Error processing case KLKN010000352019: cnr is not defined
+2025-03-17T12:33:14.649Z - ERROR - Missing required field: CNR number
+2025-03-17T12:33:14.649Z - ERROR - ✗ Error processing case KLKN010000372019: cnr is not defined
+2025-03-17T12:33:14.649Z - ERROR - Failed to fetch case details for KLKN010000372019 after 1 attempts
+2025-03-17T12:33:17.433Z - ERROR - Failed to fetch case details for KLKN010000382019 after 1 attempts
+2025-03-17T12:33:17.433Z - ERROR - ✗ Error processing case KLKN010000382019: cnr is not defined
+2025-03-17T12:33:20.472Z - ERROR - Failed to fetch case details for KLKN010000392019 after 1 attempts
+2025-03-17T12:33:20.472Z - ERROR - ✗ Error processing case KLKN010000392019: cnr is not defined
+2025-03-17T12:33:34.959Z - ERROR - Missing required field: CNR number
+2025-03-17T12:33:34.959Z - ERROR - ✗ Error processing case KLKN010000432019: cnr is not defined
+2025-03-17T12:33:34.959Z - ERROR - Failed to fetch case details for KLKN010000432019 after 1 attempts
+2025-03-17T12:33:38.884Z - ERROR - Failed to fetch case details for KLKN010000442019 after 1 attempts
+2025-03-17T12:33:38.884Z - ERROR - ✗ Error processing case KLKN010000442019: cnr is not defined
+2025-03-17T12:34:37.865Z - ERROR - Failed to fetch case details for KLKN010000592019 after 1 attempts
+2025-03-17T12:34:37.865Z - ERROR - ✗ Error processing case KLKN010000592019: cnr is not defined
+2025-03-17T12:34:40.742Z - ERROR - Failed to fetch case details for KLKN010000602019 after 1 attempts
+2025-03-17T12:34:40.742Z - ERROR - ✗ Error processing case KLKN010000602019: cnr is not defined
+2025-03-17T12:34:45.102Z - ERROR - Missing required field: CNR number
+2025-03-17T12:34:45.102Z - ERROR - ✗ Error processing case KLKN010000612019: cnr is not defined
+2025-03-17T12:34:45.102Z - ERROR - Failed to fetch case details for KLKN010000612019 after 1 attempts
+2025-03-17T12:35:29.744Z - ERROR - Failed to fetch case details for KLKN010000712019 after 1 attempts
+2025-03-17T12:35:29.744Z - ERROR - ✗ Error processing case KLKN010000712019: cnr is not defined
+2025-03-17T12:35:45.301Z - ERROR - Missing required field: CNR number
+2025-03-17T12:35:45.302Z - ERROR - ✗ Error processing case KLKN010000752019: cnr is not defined
+2025-03-17T12:35:45.302Z - ERROR - Failed to fetch case details for KLKN010000752019 after 1 attempts
+2025-03-17T12:36:02.290Z - ERROR - Failed to fetch case details for KLKN010000802019 after 1 attempts
+2025-03-17T12:36:02.290Z - ERROR - ✗ Error processing case KLKN010000802019: cnr is not defined
+2025-03-17T12:36:20.363Z - ERROR - Failed to fetch case details for KLKN010000852019 after 1 attempts
+2025-03-17T12:36:20.363Z - ERROR - ✗ Error processing case KLKN010000852019: cnr is not defined
