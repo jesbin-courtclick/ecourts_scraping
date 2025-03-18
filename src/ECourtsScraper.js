@@ -9,19 +9,19 @@ import { Database } from "./database.js";
 import { CookieJar } from "tough-cookie";
 import { wrapper } from "axios-cookiejar-support";
 import winston from "winston";
-import tunnel from "tunnel";
+import { SocksProxyAgent } from "socks-proxy-agent";
 class ECourtsScraper {
   constructor(db = null) {
-    const agent = tunnel.httpsOverHttp({
-      proxy: {
-        host: "127.0.0.1",
-        port: 9050, // Default Tor SOCKS5 port
-      },
-    });
+    const proxyAgent = new SocksProxyAgent("socks5h://127.0.0.1:9050");
+
     this.baseUrl = "https://services.ecourts.gov.in/ecourtindia_v6/";
     this.cookieJar = new CookieJar();
     this.session = wrapper(
-      axios.create({ jar: this.cookieJar, httpsAgent: agent })
+      axios.create({
+        jar: this.cookieJar,
+        httpAgent: proxyAgent,
+        httpsAgent: proxyAgent,
+      })
     );
     this.db = db || new Database();
     this.appToken = null;
