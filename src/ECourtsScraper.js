@@ -12,15 +12,15 @@ import winston from "winston";
 import { SocksProxyAgent } from "socks-proxy-agent";
 class ECourtsScraper {
   constructor(db = null) {
-    const proxyAgent = new SocksProxyAgent("socks5h://127.0.0.1:9050");
+    this.proxyAgent = new SocksProxyAgent("socks5h://127.0.0.1:9050");
 
     this.baseUrl = "https://services.ecourts.gov.in/ecourtindia_v6/";
     this.cookieJar = new CookieJar();
     this.session = wrapper(
       axios.create({
         jar: this.cookieJar,
-        httpAgent: proxyAgent,
-        httpsAgent: proxyAgent,
+        httpAgent: this.proxyAgent,
+        httpsAgent: this.proxyAgent,
       })
     );
     this.db = db || new Database();
