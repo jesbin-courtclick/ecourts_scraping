@@ -9,12 +9,20 @@ import { Database } from "./database.js";
 import { CookieJar } from "tough-cookie";
 import { wrapper } from "axios-cookiejar-support";
 import winston from "winston";
-
+import tunnel from "tunnel";
 class ECourtsScraper {
   constructor(db = null) {
+    const agent = tunnel.httpsOverHttp({
+      proxy: {
+        host: "127.0.0.1",
+        port: 9050, // Default Tor SOCKS5 port
+      },
+    });
     this.baseUrl = "https://services.ecourts.gov.in/ecourtindia_v6/";
     this.cookieJar = new CookieJar();
-    this.session = wrapper(axios.create({ jar: this.cookieJar }));
+    this.session = wrapper(
+      axios.create({ jar: this.cookieJar, httpsAgent: agent })
+    );
     this.db = db || new Database();
     this.appToken = null;
 
