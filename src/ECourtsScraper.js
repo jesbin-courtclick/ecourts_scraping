@@ -21,6 +21,7 @@ class ECourtsScraper {
         jar: this.cookieJar,
         httpAgent: this.proxyAgent,
         httpsAgent: this.proxyAgent,
+        timeout: 30000,
       })
     );
     this.db = db || new Database();
@@ -93,6 +94,7 @@ class ECourtsScraper {
             this.baseUrl
           ).toString();
           const captchaResponse = await this.session.post(captchaUrl, null, {
+            httpsAgent: this.proxyAgent,
             headers: {
               Referer: this.baseUrl,
               Accept: "image/webp,image/apng,image/*,*/*;q=0.8",
@@ -216,6 +218,7 @@ class ECourtsScraper {
         this.baseUrl
       ).toString();
       const captchaResponse = await this.session.post(captchaUrl, null, {
+        httpsAgent: this.proxyAgent,
         headers: {
           Referer: this.baseUrl,
           Accept: "image/webp,image/apng,image/*,*/*;q=0.8",
