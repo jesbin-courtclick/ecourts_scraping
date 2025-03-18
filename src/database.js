@@ -35,8 +35,8 @@ export class Database {
             // Create connection
             this.connection = await mysql.createConnection({
                 host: 'localhost',
-                user: 'courtclick',
-                password: 'courtclick',
+                user: 'root',
+                password: '',
                 database: 'ecourts_db_jesbin'
             });
 

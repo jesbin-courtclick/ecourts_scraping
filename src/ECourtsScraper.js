@@ -1,8 +1,6 @@
 import axios from "axios";
-import { fileURLToPath } from "url";
 import { writeFileSync } from "fs";
 import { load } from "cheerio";
-import FormData from "form-data";
 import Jimp from "jimp";
 import tesseract from "node-tesseract-ocr";
 import { Database } from "./database.js";
@@ -10,12 +8,15 @@ import { CookieJar } from "tough-cookie";
 import { wrapper } from "axios-cookiejar-support";
 import winston from "winston";
 import { SocksProxyAgent } from "socks-proxy-agent";
+import tough from "tough-cookie";
+import setCookie from "set-cookie-parser";
+import { exec } from "child_process";
 class ECourtsScraper {
   constructor(db = null) {
     this.proxyAgent = new SocksProxyAgent("socks5h://127.0.0.1:9050");
 
     this.baseUrl = "https://services.ecourts.gov.in/ecourtindia_v6/";
-    this.cookieJar = new CookieJar();
+    this.cookieJar = new tough.CookieJar();
     this.session = wrapper(
       axios.create({
         jar: this.cookieJar,
@@ -106,6 +107,18 @@ class ECourtsScraper {
             },
             responseType: "arraybuffer",
           });
+          // Extract cookies
+          const setCookies = captchaResponse.headers["set-cookie"];
+          if (setCookies) {
+            setCookies.forEach((cookie) => {
+              this.cookieJar.setCookieSync(cookie, this.baseUrl);
+            });
+          }
+
+          console.log(
+            "Cookies stored:",
+            this.cookieJar.getCookiesSync(this.baseUrl)
+          );
 
           if (
             captchaResponse.status === 200 &&
@@ -230,6 +243,18 @@ class ECourtsScraper {
         },
         responseType: "arraybuffer",
       });
+      // Extract cookies
+      const setCookies = captchaResponse.headers["set-cookie"];
+      if (setCookies) {
+        setCookies.forEach((cookie) => {
+          this.cookieJar.setCookieSync(cookie, this.baseUrl);
+        });
+      }
+
+      console.log(
+        "Cookies stored:",
+        this.cookieJar.getCookiesSync(this.baseUrl)
+      );
 
       if (captchaResponse.status !== 200) {
         this.logger.error(

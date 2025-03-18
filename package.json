@@ -18,6 +18,7 @@
     "mysql2": "^3.9.1",
     "node-tesseract-ocr": "^2.2.1",
     "sequelize": "^6.37.1",
+    "set-cookie-parser": "^2.7.1",
     "socks-proxy-agent": "^8.0.5",
     "sqlite3": "^5.1.7",
     "tesseract.js": "^6.0.0",
